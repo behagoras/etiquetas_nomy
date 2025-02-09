@@ -25,9 +25,7 @@ const groupThirdPageRowsByType = (rows: ThirdPage[]): Record<string, ThirdPage[]
   rows.reduce<Record<string, ThirdPage[]>>((acc, row) => {
     // Use trimmed type or fallback to 'default'
     const key = row.type?.trim() || 'default';
-    if (!acc[key]) {
-      acc[key] = [];
-    }
+    if (!acc[key]) acc[key] = [];
     // Add the row and include an icon based on the type
     acc[key].push({ ...row, icon: getIconFromType(key as Type) });
     return acc;
@@ -39,11 +37,11 @@ const groupThirdPageRowsByType = (rows: ThirdPage[]): Record<string, ThirdPage[]
  */
 const formatThirdPageCards = (grouped: Record<string, ThirdPage[]>): Card[] =>
   Object.entries(grouped).flatMap(([type, rows]) => {
-    const formattedType = type.toUpperCase() || "DEFAULT";
+    const formattedType = type === 'default' ? '~' : type.toUpperCase();
     return rows.map(row => {
       const box = row.box; // "box" field from the row
       const contents = [
-        `subtitle | Caja ${box}`,
+        `subtitle | ${box}`,
         "ruler",
         "",
         `text| ${formattedType}.`,
@@ -52,12 +50,12 @@ const formatThirdPageCards = (grouped: Record<string, ThirdPage[]>): Card[] =>
         "fill | 1",
         "",
         "ruler",
-        `property | Caja | ${box}`,
+        `property | ${box} |`,
       ];
 
       return {
         count: "1",
-        title: `${formattedType} CAJA ${box}`,
+        title: `${formattedType} ${box}`,
         contents,
         tags: [],
         color: getColorFromType(type as Type),
