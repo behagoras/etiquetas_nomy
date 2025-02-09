@@ -2,6 +2,7 @@ export interface FirstPAge {
   type: Type;
   tray: string;
   code_type: string;
+  code_number: string;
   gheller: string;
   description: string;
   comments: string;
