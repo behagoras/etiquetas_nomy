@@ -1,5 +1,5 @@
 import * as XLSX from 'xlsx';
-import { getIconFromType } from "./icons";
+import { getColorFromType, getIconFromType } from "./icons";
 import { FirstPAge, Groups, Type } from "./types";
 
 /**
@@ -78,7 +78,15 @@ const chunkGroupedRows = (
 const formatPropertyLines = (rows: FirstPAge[]): string[] => {
   // Map each row to a property string.
   const properties = rows.map(
-    row => `${row.code_type} - ${row.code_number} | ${row.description}`
+    row => {
+      const { code_type, gheller, description, code_number, type } = row;
+      const ghellerString = gheller ? ` - ${gheller}` : '';
+      const code = `${code_type}-${code_number}`
+      const descriptionString = description ? `${description}` : `${type}________________________`;
+
+      if(code_number=='12')console.log("🚀 ~ descriptionString:", descriptionString)
+      return `${code}${ghellerString} | ${descriptionString}`;
+    }
   );
   // Split into columns of 11 items each.
   const columns = chunkArray(properties, 11);
@@ -123,18 +131,15 @@ const formatCards = (
       // Format property lines by distributing all rows into columns of 11.
       const propertyLines = formatPropertyLines(trayRows);
 
-      // Append ".0" to the tray number.
-      const formattedTray = `${tray}.0`;
-
       // Build the contents array with fixed lines and the property lines.
       const contents: string[] = [
-        `subtitle | Caja ${formattedTray}`,
+        `subtitle | Caja ${tray}`,
         "ruler",
         "",
         `text| ${formattedType}.`,
         "ruler",
         "",
-        `text| from ${code_type}-${firstCode} to ${code_type}-${lastCode}.`,
+        `subtitle| from ${code_type}-${firstCode} to ${code_type}-${lastCode}.`,
         "ruler",
         "",
         ...propertyLines,
@@ -142,16 +147,16 @@ const formatCards = (
         "fill | 1",
         "",
         "ruler",
-        `property | Caja | ${formattedTray}`,
+        `property | Caja | ${tray}`,
       ];
 
       // Create the card object.
       const card: Card = {
         count: "1",
-        title: `${formattedType} CAJA ${formattedTray}`,
+        title: `${formattedType} CAJA ${tray}`,
         contents,
         tags: [],
-        color: "#6A0572",
+        color: getColorFromType(type as Type), // #6A0572
         icon: getIconFromType(type as Type),
         icon_back: "",
         title_size: "25",
