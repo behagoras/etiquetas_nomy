@@ -1,12 +1,12 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { getFirstPage } from './firstPage';
-import { outputFolder, workbook } from './getArgs';
-import { getSecondPage } from './secondPage';
-import { getThirdPage } from './thirdPage';
+import { getFirstPage } from './createFiles/firstPage';
+import { getSecondPage } from './createFiles/secondPage';
+import { getThirdPage } from './createFiles/thirdPage';
+import { workbook, outputFolder } from './createFiles/getArgs';
 
 const firstPage = getFirstPage(workbook);
-const secondPage = getSecondPage(workbook)
+const secondPage = getSecondPage(workbook);
 const thirdPage = getThirdPage(workbook);
 
 // Final results

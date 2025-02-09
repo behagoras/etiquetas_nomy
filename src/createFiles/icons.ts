@@ -23,11 +23,15 @@ export const iconsMap: Record<Type, { icon: string, color: string }> = {
   },
   Fashion: {
     icon: 'cut-diamond',
-    color: 'indigo'
+    color: 'chocolate'
   },
   'Cadenas Fashion': {
-    icon: 'cut-diamond',
-    color: 'indigo'
+    icon: 'primitive-necklace',
+    color: 'chocolate'
+  },
+  'Cadena Fashion': {
+    icon: 'primitive-necklace',
+    color: 'chocolate'
   },
   Aretes: {
     icon: 'earrings',

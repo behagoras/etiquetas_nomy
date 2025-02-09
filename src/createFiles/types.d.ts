@@ -34,4 +34,19 @@ export interface Groups {
 
 
 
-export type Type = 'default' | 'Anillos' | 'Aretes' | 'Arracadas' | 'Broqueles' | 'Cadenas' | 'Cauchos' | 'Conjunto' | 'Defectuoso' | 'Dijes' | 'Esclavas' | 'Fashion' | 'Huggies' | 'Juegos' | 'Pulseras' | 'Rosario' | 'Tobillera'| 'Cadenas Fashion' |'';
+export type Type = 'default' | 'Anillos' | 'Aretes' | 'Arracadas' | 'Broqueles' | 'Cadenas' | 'Cauchos' | 'Conjunto' | 'Defectuoso' | 'Dijes' | 'Esclavas' | 'Fashion' | 'Huggies' | 'Juegos' | 'Pulseras' | 'Rosario' | 'Tobillera'| 'Cadenas Fashion'| 'Cadena Fashion' |'';
+
+export /**
+* Represents a formatted card.
+*/
+interface Card {
+ count: string;
+ title: string;
+ contents: string[];
+ tags: string[];
+ color: string;
+ icon: string;
+ icon_back?: string;
+ title_size: string;
+ card_font_size: string;
+}

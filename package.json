@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "main": "src/index.ts",
   "scripts": {
-    "build": "tsc",
-    "start": "ts-node src/index.ts"
+    "start": "ts-node src/createImportFiles.ts $npm_config_input $npm_config_output && ts-node src/mergeImports.ts"
   },
   "author": "",
   "license": "ISC",
