@@ -21,5 +21,3 @@ const mergedArray: Card[] = [...json1, ...json2, ...json3]
 
 // Save the merged array to a JSON file
 fs.writeFileSync(path.join(outputFolder, 'merged.json'), JSON.stringify(mergedArray, null, 2));
-
-console.log(mergedArray);

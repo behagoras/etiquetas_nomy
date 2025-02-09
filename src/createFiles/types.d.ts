@@ -34,7 +34,7 @@ export interface Groups {
 
 
 
-export type Type = 'default' | 'Anillos' | 'Aretes' | 'Arracadas' | 'Broqueles' | 'Cadenas' | 'Cauchos' | 'Conjunto' | 'Defectuoso' | 'Dijes' | 'Esclavas' | 'Fashion' | 'Huggies' | 'Juegos' | 'Pulseras' | 'Rosario' | 'Tobillera'| 'Cadenas Fashion'| 'Cadena Fashion' |'';
+export type Type = 'default' | 'Anillos' | 'Aretes' | 'Arracadas' | 'Broqueles' | 'Cadenas' | 'Cauchos' | 'Conjunto' | 'Defectuoso' | 'Dijes' | 'Esclavas' | 'Fashion' | 'Huggies' | 'Juegos' | 'Pulseras' | 'Rosario' | 'Tobillera'| 'Cadenas Fashion'| 'Cadena Fashion' | 'Rhodio' |'';
 
 export /**
 * Represents a formatted card.

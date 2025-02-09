@@ -47,7 +47,6 @@ const formatPropertyLines = (rows: FirstPAge[]): string[] => {
   const properties = rows.map(({ code_type, gheller, description, code_number, type }) => {
     const ghellerStr = gheller ? ` - ${gheller}` : '';
     const descriptionStr = description || `${type}________________________`;
-    if (code_number === '12') console.log("🚀 ~ descriptionStr:", descriptionStr);
     return `${code_type}-${code_number}${ghellerStr} | ${descriptionStr}`;
   });
 
@@ -100,8 +99,8 @@ const convertToRpgCardFormat = (
         color: getColorFromType(type as Type),
         icon: getIconFromType(type as Type),
         icon_back: "",
-        title_size: "25",
-        card_font_size: "14",
+        title_size: "16",
+        card_font_size: "12",
       } as Card;
     });
   });

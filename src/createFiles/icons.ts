@@ -43,7 +43,7 @@ export const iconsMap: Record<Type, { icon: string, color: string }> = {
   },
   Pulseras: {
     icon: 'necklace',
-    color: 'darkblue'
+    color: 'darkbrown'
   },
   Anillos: {
     icon: 'ring',
@@ -55,7 +55,7 @@ export const iconsMap: Record<Type, { icon: string, color: string }> = {
   },
   Rosario: {
     icon: 'prayer-beads',
-    color: 'darkblue'
+    color: 'darkbrown'
   },
   Conjunto: {
     icon: 'double-necklace',
@@ -79,6 +79,10 @@ export const iconsMap: Record<Type, { icon: string, color: string }> = {
   },
   Tobillera: {
     icon: 'gem-chain',
+    color: 'chocolate'
+  },
+  Rhodio: {
+    icon: 'diamond-necklace',
     color: 'teal'
   },
 };

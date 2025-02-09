@@ -55,7 +55,13 @@ const formatSecondPageCards = (groups: SecondPageGroups): Card[] =>
       // If "to" is available on the last row, use it; otherwise, just show the starting value.
       const lastTo = lastRow.to ? lastRow.to : firstFrom;
 
-      const subtitleRange = `subtitle| desde ${codeType}-${firstFrom}${lastRow.to ? " hasta " + codeType + "-" + lastTo : ""}.`;
+      const from = `${codeType || ''}${firstFrom ? '-' + firstFrom : '______'}`;
+      const to = lastRow.to ? ` ${codeType}-${lastTo}` : " ______";
+
+      const fromTo = `desde ${from} hasta ${to}`;
+
+      const subtitleRange = `subtitle | ${fromTo}.`;
+
 
       const contents = [
         `subtitle | Caja ${tray}`,
@@ -82,8 +88,8 @@ const formatSecondPageCards = (groups: SecondPageGroups): Card[] =>
         color: getColorFromType(type as Type),
         icon: getIconFromType(type as Type),
         icon_back: "",
-        title_size: "25",
-        card_font_size: "14",
+        title_size: "16",
+        card_font_size: "12",
       } as Card;
     });
   });

@@ -61,8 +61,8 @@ const formatThirdPageCards = (grouped: Record<string, ThirdPage[]>): Card[] =>
         color: getColorFromType(type as Type),
         icon: row.icon,
         icon_back: "",
-        title_size: "25",
-        card_font_size: "14",
+        title_size: "16",
+        card_font_size: "12",
       } as Card;
     });
   });
